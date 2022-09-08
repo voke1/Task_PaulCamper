@@ -1,16 +1,9 @@
-import React, { Children } from "react";
+import React from "react";
 import {
-  View,
-  Text,
-  Animated,
-  ScrollView,
-  TouchableWithoutFeedback,
-  Image,
-  TouchableOpacity,
+  Animated, Image
 } from "react-native";
 import Modal from "react-native-modal";
 import { icons } from "../constants";
-
 import BlinkView from "react-native-blink-view";
 
 const Loader = ({
@@ -22,16 +15,9 @@ const Loader = ({
   title,
   desc,
 }) => {
-  const [value, setValue] = React.useState("");
-
   const modalAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const [showLoader, setShowLoader] = React.useState(isVisible);
-  const [deliveryTime, setDeliveryTime] = React.useState("");
-  const [ratings, setRatings] = React.useState("");
-  const [tags, setTags] = React.useState("");
-  const [sms, setSms] = React.useState(false);
-  const [selectedDate, setSelectedDate] = React.useState("");
-  const phoneInput = React.useRef();
+
 
   React.useEffect(() => {
     if (showLoader) {
@@ -49,18 +35,8 @@ const Loader = ({
     }
   }, [showLoader]);
 
-  //   const modalY = modalAnimatedValue.interpolate({
-  //     inputRange: [0, 1],
-  //     outputRange: [
-  //       SIZES.height,
-  //       SIZES.height - (origin === "" ? SIZES.height / 2 : SIZES.height / 1.4),
-  //     ],
-  //   });
-
   return (
     <Modal
-      //   animationType="fade"
-      //   transparent={true}
       visible={showLoader}
       style={{
         flex: 1,
@@ -72,7 +48,6 @@ const Loader = ({
       onBackButtonPress={() => setShowLoader(false)}
       onBackdropPress={() => setShowLoader(false)}
     >
-      {/* <View style={{ justifyContent: "space-around", alignItems: "center"}}> */}
       <BlinkView blinking={true} delay={500}>
         <Image
           source={icons.loader}

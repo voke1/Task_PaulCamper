@@ -11,6 +11,8 @@ const Routes = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
+
+          // Fade out Transition 
           cardStyleInterpolator: ({ current: { progress } }) => {
             const opacity = progress.interpolate({
               inputRange: [0, 1],

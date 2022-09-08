@@ -35,28 +35,14 @@ export async function apiReq(
 ) {
   const getTokenHeader = await getHeaders();
 
-  // try {
-  console.log(
-    "ITS CALLED",
-    "url:",
-    endpoint,
-    "data: ",
-    data,
-    "method: ",
-    method,
-    "headers",
-    { headers }
-  );
-
   try {
 
     const result = await axios[method](endpoint, data, { headers });
-    console.log("API RESULT: ", result.status);
     if (result) {
       return result.status;
     }
   } catch (err) {
-    console.log("ERROR OCCURRED!", err.response);
+    return err
   }
 }
 

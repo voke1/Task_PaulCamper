@@ -7,7 +7,6 @@ import { COLORS, SIZES, icons } from "../../constants";
 const SmsModal = ({ isVisible, onClose, errors }) => {
   const modalAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const [showSmsModal, setShowSmsModal] = React.useState(isVisible);
-  const [selectedDate, setSelectedDate] = React.useState("");
 
   React.useEffect(() => {
     if (showSmsModal) {
@@ -21,7 +20,7 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
         toValue: 0,
         duration: 500,
         useNativeDriver: true,
-      }).start(() => onClose(selectedDate));
+      }).start(() => onClose(false));
     }
   }, [showSmsModal]);
 

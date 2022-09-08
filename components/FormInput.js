@@ -6,30 +6,22 @@ import { COLORS, SIZES } from "../constants";
 const FormInput = ({
   name,
   control,
-  multiline,
   containerStyle,
-  inputContainerStyle,
-  label,
-  inputStyle,
   placeholder,
   prependComponent,
   appendComponent,
-  onChange,
   secureTextEntry,
   keyboardType = "default",
   autoCompleteType = "off",
   autoCapitalize = "None",
-  errorMsg = "",
   maxLength,
-  labelStyle,
-  editable,
-  value,
   rules,
 }) => {
   const [color, setColor] = React.useState("");
-  const [showSmsModal, setShowSmsModal] = React.useState(true);
 
   return (
+
+    // Text Input Container 
     <View
       style={{
         ...containerStyle,
@@ -45,6 +37,8 @@ const FormInput = ({
         }) => {
           return (
             <>
+
+            {/* Text Input View */}
               <View
                 style={{
                   flexDirection: "row",
@@ -60,6 +54,8 @@ const FormInput = ({
                   borderColor: color ? "black" : "black",
                 }}
               >
+
+                {/* Left Component  */}
                 {prependComponent}
 
                 <TextInput
@@ -87,6 +83,8 @@ const FormInput = ({
                   maxLength={maxLength}
                   onChangeText={(text) => onChange(text)}
                 />
+
+                  {/* Right Component  */}
                 {appendComponent}
               </View>
             </>

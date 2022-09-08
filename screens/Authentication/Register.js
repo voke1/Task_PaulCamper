@@ -31,26 +31,27 @@ const Register = ({ navigation }) => {
   } = useForm();
 
 
-  console.log("upadate USER", user);
 
+  // Handle User Login/Registration 
   const registerHandler = (data) => {
     try {
       let result = dispatch(loginBegin(data));
-      console.log("RECIVED RESULT: ", result);
 
       if (result?.payload?.user) {
         let registeredUser = dispatch(loginSuccess(data));
-        console.log("REGISTERED USER", registeredUser);
         if (registeredUser.payload) {
 
           navigation.navigate("HomeScreen");
         }
       }
     } catch (error) {
-      console.log("An error occurred!", error);
+      // console.log("An error occurred!", error);
+      return error
     }
   };
 
+
+  // Handle validation error
   const errorHandler = async () => {
     setShowSmsModal(true);
   };

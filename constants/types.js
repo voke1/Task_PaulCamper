@@ -1,27 +1,16 @@
 ///Account
 
 export const LOGIN_BEGIN = "LOGIN_BEGIN";
-export const LOGOUT_BEGIN = "LOGOUT_BEGIN";
-export const FILTER_BEGIN = "FILTER_BEGIN";
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
-export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
-export const FILTER_SUCCESS = "FILTER_SUCCESS";
 
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
-export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
-export const FILTER_FAILURE = "FILTER_FAILURE";
 
 const types = {
   LOGIN_BEGIN,
-  LOGOUT_BEGIN,
-  FILTER_BEGIN,
 
   LOGIN_SUCCESS,
-  LOGOUT_SUCCESS,
 
   LOGIN_FAILURE,
-  LOGOUT_FAILURE,
-  FILTER_FAILURE,
 };
 export default types;
