@@ -61,7 +61,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
           style={{
             fontSize: 20,
             textAlign: "center",
-            fontFamily: "Poppins-Bold",
             lineHeight: 30,
             paddingTop: SIZES.base,
           }}
@@ -73,7 +72,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
             style={{
               fontSize: 14,
               textAlign: "center",
-              fontFamily: "Poppins-Regular",
               lineHeight: 21,
             }}
           >
@@ -85,7 +83,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
             style={{
               fontSize: 14,
               textAlign: "center",
-              fontFamily: "Poppins-Regular",
               lineHeight: 21,
             }}
           >
@@ -97,7 +94,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
             style={{
               fontSize: 14,
               textAlign: "center",
-              fontFamily: "Poppins-Regular",
               lineHeight: 21,
             }}
           >
@@ -109,7 +105,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
             style={{
               fontSize: 14,
               textAlign: "center",
-              fontFamily: "Poppins-Regular",
               lineHeight: 21,
             }}
           >
@@ -134,7 +129,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
             }}
             labelStyle={{
               color: "white",
-              fontFamily: "Poppins-Regular",
               fontSize: 14,
               lineHeight: 21,
             }}

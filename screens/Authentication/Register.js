@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Alert,
   Image,
   SafeAreaView,
   Text,
@@ -19,7 +18,6 @@ const { loginSuccess, loginBegin, loginFailure } = utils;
 
 const Register = ({ navigation }) => {
   const [showPass, setShowPass] = React.useState(false);
-  const [showPasswordModal, setShowPasswordModal] = React.useState(false);
   const [showSmsModal, setShowSmsModal] = React.useState(false);
   const dispatch = useDispatch();
   const user = useSelector((initialState) => initialState);
@@ -310,7 +308,6 @@ const Register = ({ navigation }) => {
             />
             <Text
               style={{
-                // fontFamily: "Poppins-Regular",
                 fontSize: 12,
                 lineHeight: 18,
               }}
