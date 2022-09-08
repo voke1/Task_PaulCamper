@@ -3,12 +3,12 @@ import { View, SafeAreaView, StyleSheet, Text } from "react-native";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.accountReducer.user);
 
   return (
     <SafeAreaView style={styles.container}>
       <Text
-        style={{ textAlign: "center" }}
+        style={{ textAlign: "center", fontSize: 20 }}
       >{`Welcome ${user?.firstName}\nYou have successfully registered!`}</Text>
     </SafeAreaView>
   );

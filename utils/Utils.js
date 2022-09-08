@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Alert } from "react-native";
 import { LOGIN_BEGIN, LOGIN_FAILURE, LOGIN_SUCCESS } from "../constants/types";
-import { useSelector } from "react-redux";
 
 export async function getHeaders() {
   try {
@@ -10,19 +9,10 @@ export async function getHeaders() {
     Alert.alert("Error found in token");
   }
 }
-export const noInternet = () => ({
-  type: types.NO_INTERNET,
-  payload: { internetConnection: true },
-});
 
-export const clearState = () => ({
-  type: CLEAR_REDUX_STATE,
-  payload: {},
-});
-
-export const loginSuccess = () => ({
+export const loginSuccess = (data) => ({
   type: LOGIN_SUCCESS,
-  payload: {},
+  payload: {data},
 });
 
 export const loginBegin = (user) => ({
@@ -59,15 +49,11 @@ export async function apiReq(
   );
 
   try {
-    const user = useSelector((state) => state.user);
 
     const result = await axios[method](endpoint, data, { headers });
-    console.log("API RESULT: ", result);
+    console.log("API RESULT: ", result.status);
     if (result) {
-      const { data } = result;
-      // console.log("first data check: ", data);
-      return data;
-      // console.log("another check on data: ", data);
+      return result.status;
     }
   } catch (err) {
     console.log("ERROR OCCURRED!", err.response);
@@ -75,7 +61,6 @@ export async function apiReq(
 }
 
 export function apiPost(endpoint, data, headers = {}) {
-  // const data = useSelector((state)=>state.user)
 
   return apiReq(endpoint, data, "post", headers);
 }

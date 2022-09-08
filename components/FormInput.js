@@ -57,7 +57,7 @@ const FormInput = ({
                   justifyContent: "center",
                   alignItems: "center",
                   borderWidth: 2,
-                  borderColor: color ? "green" : "red",
+                  borderColor: color ? "black" : "black",
                 }}
               >
                 {prependComponent}

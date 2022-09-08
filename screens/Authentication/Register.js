@@ -21,25 +21,27 @@ const Register = ({ navigation }) => {
   const [showPass, setShowPass] = React.useState(false);
   const [showPasswordModal, setShowPasswordModal] = React.useState(false);
   const [showSmsModal, setShowSmsModal] = React.useState(false);
+  const dispatch = useDispatch();
+  const user = useSelector((initialState) => initialState);
   const {
     control,
     handleSubmit,
     formState: { errors },
     setError,
   } = useForm();
-  const dispatch = useDispatch();
-  const user = useSelector((initialState) => initialState);
+
+
   console.log("upadate USER", user);
 
-  const registerHandler = async (data) => {
+  const registerHandler = (data) => {
     try {
       let result = dispatch(loginBegin(data));
       console.log("RECIVED RESULT: ", result);
 
       if (result?.payload?.user) {
         let registeredUser = dispatch(loginSuccess(data));
+        console.log("REGISTERED USER", registeredUser);
         if (registeredUser.payload) {
-          console.log("REGISTERED USER", registeredUser);
 
           navigation.navigate("HomeScreen");
         }
@@ -77,7 +79,6 @@ const Register = ({ navigation }) => {
           justifyContent: "space-evenly",
           backgroundColor: COLORS.white,
           borderRadius: SIZES.radius * 1.2,
-          // marginVertical: SIZES.radius,
           paddingHorizontal: SIZES.radius,
         }}
       >
@@ -98,7 +99,6 @@ const Register = ({ navigation }) => {
               color: COLORS.primary,
               fontSize: 23,
               lineHeight: 35,
-              // fontFamily: "Poppins-Bold",
             }}
           >
             Welcome!
