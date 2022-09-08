@@ -69,7 +69,7 @@ const Register = ({ navigation }) => {
         <Image
           source={icons.paulCamper}
           resizeMode="contain"
-          style={{ width: 150, height: 150 }}
+          style={{ width: 300, height: 150 }}
         />
       </View>
       <View
