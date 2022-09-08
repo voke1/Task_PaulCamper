@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text
-        style={{ textAlign: "center", fontSize: 20 }}
+        style={styles.homeText}
       >{`Welcome ${user?.firstName}\nYou have successfully registered!`}</Text>
     </SafeAreaView>
   );
@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  homeText: {
+    textAlign: "center",
+    fontSize: 20,
   },
 });
 
