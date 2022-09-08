@@ -1,16 +1,10 @@
 import React from "react";
-import {
-  Animated, Text, View, Image
-} from "react-native";
+import { Animated, Text, View, Image } from "react-native";
 import Modal from "react-native-modal";
-import {
-  TextButton
-} from "../../components";
+import { TextButton } from "../../components";
 import { COLORS, SIZES, icons } from "../../constants";
 
-
 const SmsModal = ({ isVisible, onClose, errors }) => {
-
   const modalAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const [showSmsModal, setShowSmsModal] = React.useState(isVisible);
   const [selectedDate, setSelectedDate] = React.useState("");
@@ -30,8 +24,6 @@ const SmsModal = ({ isVisible, onClose, errors }) => {
       }).start(() => onClose(selectedDate));
     }
   }, [showSmsModal]);
-
-
 
   return (
     <Modal

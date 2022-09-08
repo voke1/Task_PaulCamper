@@ -11,7 +11,9 @@ const LineDivider = ({ lineStyle, children }) => {
         backgroundColor: COLORS.lightGray2,
         ...lineStyle,
       }}
-    >{children}</View>
+    >
+      {children}
+    </View>
   );
 };
 

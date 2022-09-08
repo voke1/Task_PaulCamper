@@ -16,8 +16,6 @@ export const COLORS = {
   lightGray: "#E6E6E6",
   lightGray2: "#212125",
   lightGray3: "#757575",
-
-
 };
 export const SIZES = {
   font: 14,
@@ -25,13 +23,10 @@ export const SIZES = {
   radius: height * 0.03,
   base: height * 0.01,
 
-
-
   // app dimensions
   width,
   height,
 };
-
 
 const appTheme = { COLORS, SIZES };
 

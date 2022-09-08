@@ -1,12 +1,7 @@
 //Home screens
-import Home from './Home/Home'
-
+import Home from "./Home/Home";
 
 //Authentication screens
-import Register from './Authentication/Register'
+import Register from "./Authentication/Register";
 
-
-export {
-    Home,
-    Register,
-}
+export { Home, Register };

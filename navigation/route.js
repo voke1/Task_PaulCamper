@@ -4,7 +4,6 @@ import React from "react";
 import { Home, Register } from "../screens";
 const Stack = createStackNavigator();
 
-
 const Routes = () => {
   // const [userLoggedIn, setUserLoggedIn] = React.useState("");
 
@@ -14,10 +13,7 @@ const Routes = () => {
     },
   });
 
-  React.useEffect(() => {
-  }, []);
-
-
+  React.useEffect(() => {}, []);
 
   return (
     <NavigationContainer>

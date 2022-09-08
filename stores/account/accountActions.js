@@ -5,7 +5,6 @@ import utils from "../../utils/Utils.js";
 import { LOGIN_SUCCESS, LOGIN_BEGIN } from "../../constants/types";
 import { useSelector } from "react-redux";
 
-
 const {
   apiDelete,
   apiPost,
@@ -21,23 +20,22 @@ const {
 function* register(data) {
   console.log("USER:");
   try {
-
     const response = yield call(apiPost(LOGIN, data));
     console.log("GENERATOR:", response);
     const users = yield response.json();
     return users;
     // yield put(loginSuccess(users));
   } catch (error) {
-    return error
+    return error;
   }
 }
 
 function* registerSaga() {
   try {
-    yield takeEvery(LOGIN_BEGIN)
+    yield takeEvery(LOGIN_BEGIN);
     yield takeEvery(LOGIN_SUCCESS, register);
   } catch (error) {
-    return error
+    return error;
   }
 }
 

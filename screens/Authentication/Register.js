@@ -28,20 +28,18 @@ const Register = ({ navigation }) => {
     setError,
   } = useForm();
   const dispatch = useDispatch();
-  const user = useSelector((initialState)=> initialState)
-            console.log("upadate USER", user);
-
+  const user = useSelector((initialState) => initialState);
+  console.log("upadate USER", user);
 
   const registerHandler = async (data) => {
     try {
-      let result =  dispatch(loginBegin(data));
+      let result = dispatch(loginBegin(data));
       console.log("RECIVED RESULT: ", result);
 
       if (result?.payload?.user) {
-        let registeredUser =  dispatch(loginSuccess(data));
+        let registeredUser = dispatch(loginSuccess(data));
         if (registeredUser.payload) {
           console.log("REGISTERED USER", registeredUser);
-          
 
           navigation.navigate("HomeScreen");
         }

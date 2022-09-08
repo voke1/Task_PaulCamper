@@ -10,7 +10,7 @@ export default function App() {
       <Routes />
     </Provider>
   );
-} 
+}
 
 const styles = StyleSheet.create({
   container: {

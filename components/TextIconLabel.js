@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, Image, StyleSheet,View } from "react-native";
+import { TouchableOpacity, Text, Image, StyleSheet, View } from "react-native";
 import { COLORS } from "../constants";
 
 const TextIconLabel = ({

@@ -28,7 +28,6 @@ const TextIconButton = ({
   iconStyle1,
   iconStyle2,
   disabled,
-  
 }) => {
   return (
     <TouchableOpacity
@@ -65,7 +64,6 @@ const TextIconButton = ({
 
           <Text
             style={{
-
               ...labelStyle,
             }}
           >
@@ -82,26 +80,22 @@ const TextIconButton = ({
               }}
               resizeMode="contain"
             />
-          ) : (
-            (iconPosition == "APPENDCOMPONENT" ? (
-              <View
+          ) : iconPosition == "APPENDCOMPONENT" ? (
+            <View
+              style={{
+                ...componentContainerStyle,
+              }}
+            >
+              <Image
+                source={componentIcon}
                 style={{
-                  ...componentContainerStyle,
+                  ...styles.image,
+                  ...componentIconStyle,
                 }}
-              >
-                <Image
-                  source={componentIcon}
-                  style={{
-                    ...styles.image,
-                    ...componentIconStyle,
-                  }}
-                  resizeMode="contain"
-                />
-              </View>
-            ) : (
-            null
-            ))
-          )}
+                resizeMode="contain"
+              />
+            </View>
+          ) : null}
         </>
       )}
     </TouchableOpacity>

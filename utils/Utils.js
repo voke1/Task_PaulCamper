@@ -1,10 +1,7 @@
 import axios from "axios";
 import { Alert } from "react-native";
-import {
-  LOGIN_BEGIN, LOGIN_FAILURE, LOGIN_SUCCESS
-} from "../constants/types";
+import { LOGIN_BEGIN, LOGIN_FAILURE, LOGIN_SUCCESS } from "../constants/types";
 import { useSelector } from "react-redux";
-
 
 export async function getHeaders() {
   try {
@@ -25,7 +22,7 @@ export const clearState = () => ({
 
 export const loginSuccess = () => ({
   type: LOGIN_SUCCESS,
-  payload: { },
+  payload: {},
 });
 
 export const loginBegin = (user) => ({
@@ -37,7 +34,6 @@ export const loginFailure = (error) => ({
   type: LOGIN_FAILURE,
   payload: { error },
 });
-
 
 export async function apiReq(
   endpoint,
@@ -63,7 +59,7 @@ export async function apiReq(
   );
 
   try {
-            const user = useSelector((state) => state.user);
+    const user = useSelector((state) => state.user);
 
     const result = await axios[method](endpoint, data, { headers });
     console.log("API RESULT: ", result);
@@ -78,8 +74,8 @@ export async function apiReq(
   }
 }
 
-export function apiPost(endpoint, data,  headers = {}) {
-// const data = useSelector((state)=>state.user)
+export function apiPost(endpoint, data, headers = {}) {
+  // const data = useSelector((state)=>state.user)
 
   return apiReq(endpoint, data, "post", headers);
 }

@@ -13,7 +13,6 @@ import { icons } from "../constants";
 
 import BlinkView from "react-native-blink-view";
 
-
 const Loader = ({
   isVisible,
   onClose,
