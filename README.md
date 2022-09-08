@@ -24,9 +24,11 @@ This is the solution to the engineering Challenge from PaulCamper.
 
 ## Screenshots
 
-![alt text](https://github.com/voke1/Task_PaulCamper/blob/master/screenshots/authForm.jpeg?raw=true)
+![alt text](https://github.com/voke1/Task_PaulCamper/blob/master/screenshots/splash.jpeg?raw=true)
 
-![alt text](https://github.com/voke1/Task_PaulCamper/blob/master/screenshots/modal.jpeg?raw=true)
+![alt text](https://github.com/voke1/Task_PaulCamper/blob/master/screenshots/authForm1.jpeg?raw=true)
+
+![alt text](https://github.com/voke1/Task_PaulCamper/blob/master/screenshots/modal1.jpeg?raw=true)
 
 ## APP Installation and Usage
 
