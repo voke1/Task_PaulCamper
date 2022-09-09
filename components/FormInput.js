@@ -6,6 +6,8 @@ import { COLORS, SIZES } from "../constants";
 const FormInput = ({
   name,
   control,
+  focus,
+  onFocus,
   containerStyle,
   placeholder,
   prependComponent,
@@ -15,13 +17,13 @@ const FormInput = ({
   autoCompleteType = "off",
   autoCapitalize = "None",
   maxLength,
+  key,
   rules,
 }) => {
   const [color, setColor] = React.useState("");
 
   return (
-
-    // Text Input Container 
+    // Text Input Container
     <View
       style={{
         ...containerStyle,
@@ -32,13 +34,12 @@ const FormInput = ({
         name={name}
         rules={rules}
         render={({
-          field: { value, onChange, onBlur, onFocus },
+          field: { value, onChange, onBlur },
           fieldState: { error, isTouched },
         }) => {
           return (
             <>
-
-            {/* Text Input View */}
+              {/* Text Input View */}
               <View
                 style={{
                   flexDirection: "row",
@@ -51,10 +52,9 @@ const FormInput = ({
                   justifyContent: "center",
                   alignItems: "center",
                   borderWidth: 2,
-                  borderColor: color ? "black" : "black",
+                  borderColor: focus == name ? "green" : "black",
                 }}
               >
-
                 {/* Left Component  */}
                 {prependComponent}
 
@@ -70,9 +70,6 @@ const FormInput = ({
                     fontSize: 20,
                     lineHeight: 21,
                   }}
-                  onFocus={(e) =>
-                    console.log("focusus:", setColor(e.currentTarget))
-                  }
                   value={value}
                   placeholder={placeholder}
                   placeholderTextColor="gray"
@@ -82,9 +79,11 @@ const FormInput = ({
                   autoCapitalize={autoCapitalize}
                   maxLength={maxLength}
                   onChangeText={(text) => onChange(text)}
+                  onBlur={onBlur}
+                  onFocus={onFocus}
                 />
 
-                  {/* Right Component  */}
+                {/* Right Component  */}
                 {appendComponent}
               </View>
             </>

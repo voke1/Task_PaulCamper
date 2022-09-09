@@ -18,6 +18,7 @@ const { loginSuccess, loginBegin, loginFailure } = utils;
 
 const Register = ({ navigation }) => {
   const [showPass, setShowPass] = React.useState(false);
+  const [focus, setFocus] = React.useState(false)
   const [showSmsModal, setShowSmsModal] = React.useState(false);
   const dispatch = useDispatch();
   const user = useSelector((initialState) => initialState);
@@ -122,6 +123,9 @@ const Register = ({ navigation }) => {
             }}
             name="firstName"
             placeholder="First Name"
+            focus={focus}
+            onFocus={(e) => setFocus("firstName")}
+            onBlur={(e) => setFocus(false)}
             prependComponent={
               <TouchableOpacity
                 style={{
@@ -156,6 +160,9 @@ const Register = ({ navigation }) => {
               },
             }}
             name="lastName"
+            focus={focus}
+            onFocus={(e) => setFocus("lastName")}
+            onBlur={(e) => setFocus(false)}
             placeholder="Last Name"
             prependComponent={
               <TouchableOpacity
@@ -178,6 +185,7 @@ const Register = ({ navigation }) => {
             }
           />
           <FormInput
+            key={1}
             control={control}
             rules={{
               required: {
@@ -193,6 +201,9 @@ const Register = ({ navigation }) => {
             }}
             name="email"
             placeholder="Johndoe@example.com"
+            focus={focus}
+            onFocus={(e) => setFocus("email")}
+            onBlur={(e) => setFocus(false)}
             prependComponent={
               <TouchableOpacity
                 style={{
@@ -217,6 +228,9 @@ const Register = ({ navigation }) => {
           <FormInput
             control={control}
             name="password"
+            focus={focus}
+            onFocus={(e) => setFocus("password")}
+            onBlur={(e) => setFocus(false)}
             rules={{
               required: {
                 value: true,
