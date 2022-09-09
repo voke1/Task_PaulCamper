@@ -2,6 +2,11 @@
 
 This is the solution to the engineering Challenge from PaulCamper.
 
+### Please note that the form field names used are; 
+```
+$ Firstname, $ LastName, $ email, $ Password
+```
+
 ## Functions/Screens
 
 1. Splashscreen.
